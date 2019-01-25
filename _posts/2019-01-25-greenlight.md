@@ -1,5 +1,5 @@
 ---
-title: Sample Game
+title: Greenlight
 categories: 
   - table top rpg
 source: 
