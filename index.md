@@ -1,17 +1,16 @@
 ---
 ---
 
-# community
+<h1>community</h1>
 
 {% for category in site.categories %}
-
-## {{ category[0] }}
-
-{%- for post in category[1] -%}
-### [{{ post.title }}]({{ site.github.baseurl }}{{ post.url }})
-{%- for tag in post.tags -%}
-* {{ tag }}</li>
-{%- endfor -%}
-
-{% endfor %}
+  <h2>{{ category[0] }}</h2>
+    {% for post in category[1] %}
+    <h3><a href="{{ site.github.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+    <ul class="tags">
+      {% for tag in post.tags %}
+      <li>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
 {% endfor %}
