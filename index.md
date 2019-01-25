@@ -2,7 +2,7 @@
 ---
 # community
 
-{% category in site.categories %}
+{% for category in site.categories %}
 
 ## {{ category[0] }}
 
