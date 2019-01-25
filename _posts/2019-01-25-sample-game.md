@@ -1,6 +1,8 @@
 ---
 title: Sample Game
-categories: [story-rich, table top rpg]
+categories: 
+  - story-rich
+  - table top rpg
 source: 
   type: gist
   owner: yggilabs
