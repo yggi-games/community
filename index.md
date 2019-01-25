@@ -10,7 +10,6 @@
 
 {% for tag in post.tags %}
 * {{ tag }}
-
 {% endfor %}
 {% endfor %}
 {% endfor %}
