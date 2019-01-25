@@ -1,5 +1,6 @@
 ---
 ---
+{{ site.categories | inspect }}
 {% for category in site.categories %}
   <h2>{{ category[0] }}</h2>
     {% for post in category[1] %}
