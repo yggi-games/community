@@ -1,6 +1,5 @@
 ---
 ---
-
 {% for category in site.categories %}
 ## {{ category[0] }}
 
