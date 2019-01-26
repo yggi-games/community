@@ -35,7 +35,7 @@ tags:
     <pre>
     ---
     title: <input type="text" on="change:AMP.setState({title: event.value})">
-    categories: <amp-selector layout="container" on="select:AMP.setState({categories: event.value})" multiple>
+    categories: <amp-selector layout="container" on="select:AMP.setState({categories: event.selectedOptions})" multiple>
       <ul>
         {%- for category in page.categories -%}
         <li option="{{ category }}">{{ category }}</li>
@@ -43,7 +43,7 @@ tags:
       </ul>
     </amp-selector>
     source:
-      type: gist? <input type="checkbox" value="gist" on="change:AMP.setState({gist: event.value})">
+      type: gist? <input type="checkbox" value="gist" on="change:AMP.setState({gist: event.selectedOptions})">
       owner: <input type="text" on="change:AMP.setState({owner: event.value})">
       repo: <input type="text" on="change:AMP.setState({repo: event.value})">
     tags: <amp-selector layout="container" on="select:AMP.setState({tags: event.value})" multiple>
