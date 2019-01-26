@@ -38,7 +38,7 @@ tags:
     categories: <amp-selector layout="container" on="change:AMP.setSate({categories: event.value})" multiple>
       <ul>
         {%- for category in page.categories -%}
-        <li option="{{ category }}">{{ category }}<li>
+        <li option="{{ category }}">{{ category }}</li>
         {%- endfor -%}
       </ul>
     </amp-selector>
@@ -49,7 +49,7 @@ tags:
     tags: <amp-selector layout="container" on="change:AMP.setSate({tags: event.value})" multiple>
       <ul>
         {%- for tag in page.tags -%}
-        <li option="{{ tag }}">{{ tag }}<li>
+        <li option="{{ tag }}">{{ tag }}</li>
         {%- endfor -%}
       </ul>
     </amp-selector>
