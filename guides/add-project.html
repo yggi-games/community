@@ -24,7 +24,7 @@
     </pre>
     <form method="get"
       action="https://github.com/yggi-games/community/new/master/_posts">
-      <input type="hidden" name="filename" [value]="encodeURIComponent(title)">
+      <input type="hidden" name="filename" [value]="title + '.md'">
       <input type="hidden" name="value"
         [value]="
           '---&NewLine;' +
