@@ -2,9 +2,11 @@
  
 ## How do I...
 * request a new feature?
-  * create a new [issue](../../issue)
+  * check if there is a similar feature request by looking at [issues](../../issues)
+  * create a new [issue](../../issues/new)
 * ask a question?
-  * create a new [issue](../../issue)
+  * check if there is a similar question by looking at [issues](../../issues)
+  * create a new [issue](../../issues/new)
 * add my own project?
   * navigate to the \_posts folder
   * create a new file with a unique name in the format _YEAR-MONTH-DAY-example.FORMAT_ 
