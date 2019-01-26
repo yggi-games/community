@@ -2,7 +2,7 @@
 social:
   github:
     label: GitHub
-    url: https://github.com/%user%
+    url: "https://github.com/%user%"
 ---
 {% assign people = site.people %}
 {% assign social = page.social %}
