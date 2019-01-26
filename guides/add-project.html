@@ -27,15 +27,15 @@
       <input type="hidden" name="filename" [value]="encodeURIComponent(title)">
       <input type="hidden" name="value"
         [value]="
-          '---%0A' +
-          'title: ' + title + '%0A' +
-          'categories: [' + categories + ']%0A' +
+          '---&NewLine;' +
+          'title: ' + title + '&NewLine;' +
+          'categories: [' + categories + ']&NewLine;' +
           'source: ' +
-          '%09' + 'type: ' + gist + '%0A' +
-          '%09' + 'owner: ' + owner + '%0A' +
-          '%09' + 'repo: ' + repo + '%0A' +
-          'tags: ' + tags + '%0A' +
-          '---%0A' +
+          '&Tab;' + 'type: ' + gist + '&NewLine;' +
+          '&Tab;' + 'owner: ' + owner + '&NewLine;' +
+          '&Tab;' + 'repo: ' + repo + '&NewLine;' +
+          'tags: ' + tags + '&NewLine;' +
+          '---&NewLine;' +
           body">
       <input type="submit">
     </form>
