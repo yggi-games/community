@@ -21,7 +21,7 @@ tags:
    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
  </head>
  <body>
-    <amp-bind-macro id="optional" expression="optional !== null ? optional : ''" arguments="optional"></amp-bind-macro>
+    <amp-bind-macro id="optional" expression="x !== null ? x : ''" arguments="x"></amp-bind-macro>
     <pre>
     ---
     title: <input type="text" on="change:AMP.setState({title: event.value})">
