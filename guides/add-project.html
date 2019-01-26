@@ -56,12 +56,12 @@ tags:
         [value]="
       '---&NewLine;' +
       'title: ' + (title || '') + '&NewLine;' +
-      'categories: ' +  (categories ? categories.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '') + '&NewLine;' +
+      'categories: ' +  (categories ? categories.map((x,i) => '&NewLine;  - ' + x).join('') : '') + '&NewLine;' +
       'source:' + '&NewLine;' +
       '  ' + 'type: ' + (gist || '') + '&NewLine;' +
       '  ' + 'owner: ' + (owner || '') + '&NewLine;' +
       '  ' + 'repo: ' + (repo || '') + '&NewLine;' +
-      'tags: ' +  (tags ? tags.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '') + '&NewLine;' +
+      'tags: ' +  (tags ? tags.map((x,i) => '&NewLine;  - ' + x).join('') : '') + '&NewLine;' +
       '---&NewLine;' +
       (body || '')">
       <input type="submit">      
