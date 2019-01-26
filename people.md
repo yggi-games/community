@@ -8,17 +8,16 @@ social:
 {% assign social = page.social %}
 
 {% for person in people %}
-  ## {{ person.name }}
-  
-  {{ person.content }}
+## {{ person.name }}
   
   
-  ### connect
+{{ person.content }}
   
   
-  {% for s in social %}  
-  * [{{ s.label }}]({{ s.url | replace_first: "%user%", person.social[s.id] }})
-  {% endfor %}
+### connect
   
   
+{% for s in social %}  
+* [{{ s.label }}]({{ s.url | replace_first: "%user%", person.social[s.id] }})
+{% endfor %}
 {% endfor %}
