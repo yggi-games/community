@@ -1,6 +1,5 @@
 # Community
-
-One Paragraph of project description goes here
+See [Issue #3](https://github.com/yggi-games/community-alpha/issues/3)
 
 ## Getting Started
 
