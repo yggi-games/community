@@ -29,12 +29,12 @@
         [value]="
           '---&NewLine;' +
           'title: ' + title + '&NewLine;' +
-          'categories: [' + categories + ']&NewLine;' +
-          'source: ' +
+          'categories: ' + categories.map((x,i) => '&NewLine;&Tab;- ' + x) + '&NewLine;' +
+          'source:' + '&NewLine;' +
           '&Tab;' + 'type: ' + gist + '&NewLine;' +
           '&Tab;' + 'owner: ' + owner + '&NewLine;' +
           '&Tab;' + 'repo: ' + repo + '&NewLine;' +
-          'tags: ' + tags + '&NewLine;' +
+          'tags: ' + tags.map((x,i) => '&NewLine;&Tab;- ' + x) + '&NewLine;' +
           '---&NewLine;' +
           body">
       <input type="submit">
