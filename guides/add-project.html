@@ -93,10 +93,10 @@ tags:
   <textarea on="change:AMP.setState({body: event.value})"></textarea>
   <form method="get"
     target="_blank"
-    action="https://github.com/yggi-games/community/new/master/_posts">
+    action="https://github.com/yggi-games/community/new/master/">
     <input type="hidden" 
       name="filename" 
-      [value]="'{{ site.time | date: "%Y-%m-%d" }}-' + encodeURI(title || '') + '.md'">
+      [value]="'_posts/{{ site.time | date: "%Y-%m-%d" }}-' + encodeURI(title || '') + '.md'">
     <input type="hidden" 
       name="value"
       [value]="
