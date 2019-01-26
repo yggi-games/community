@@ -1,7 +1,10 @@
 # community
-
+ 
 ## How do I...
-
+* request a new feature?
+  * create a new [issue](/issue)
+* ask a question?
+  * create a new [issue](/issue)
 * add my own project?
   * navigate to the \_posts folder
   * create a new file with a unique name in the format _YEAR-MONTH-DAY-example.FORMAT_ 
