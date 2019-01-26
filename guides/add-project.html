@@ -43,10 +43,10 @@ tags:
       </ul>
     </amp-selector>
     source:
-      type: gist? <input type="checkbox" value="gist" on="change:AMP.setState({gist: event.selectedOptions})">
+      type: gist? <input type="checkbox" value="gist" on="change:AMP.setState({gist: event.value})">
       owner: <input type="text" on="change:AMP.setState({owner: event.value})">
       repo: <input type="text" on="change:AMP.setState({repo: event.value})">
-    tags: <amp-selector layout="container" on="select:AMP.setState({tags: event.value})" multiple>
+    tags: <amp-selector layout="container" on="select:AMP.setState({tags: event.selectedOptions})" multiple>
       <ul>
         {%- for tag in page.tags -%}
         <li option="{{ tag }}">{{ tag }}</li>
