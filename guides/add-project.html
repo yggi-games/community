@@ -10,6 +10,17 @@
    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
  </head>
  <body>
+    <amp-bind-macro id="form-value" expression="
+      '---&NewLine;' +
+      'title: ' + title + '&NewLine;' +
+      'categories: ' + categories.map((x,i) => '&NewLine;&Tab;- ' + x) + '&NewLine;' +
+      'source:' + '&NewLine;' +
+      '&Tab;' + 'type: ' + gist + '&NewLine;' +
+      '&Tab;' + 'owner: ' + owner + '&NewLine;' +
+      '&Tab;' + 'repo: ' + repo + '&NewLine;' +
+      'tags: ' + tags.map((x,i) => '&NewLine;&Tab;- ' + x) + '&NewLine;' +
+      '---&NewLine;' +
+      body"/>
     <pre>
     ---
     title: <input type="text" on="change:AMP.setState({title: event.value})">
@@ -26,18 +37,9 @@
       action="https://github.com/yggi-games/community/new/master/_posts">
       <input type="hidden" name="filename" [value]="title + '.md'">
       <input type="hidden" name="value"
-        [value]="
-          '---&NewLine;' +
-          'title: ' + title + '&NewLine;' +
-          'categories: ' + categories.map((x,i) => '&NewLine;&Tab;- ' + x) + '&NewLine;' +
-          'source:' + '&NewLine;' +
-          '&Tab;' + 'type: ' + gist + '&NewLine;' +
-          '&Tab;' + 'owner: ' + owner + '&NewLine;' +
-          '&Tab;' + 'repo: ' + repo + '&NewLine;' +
-          'tags: ' + tags.map((x,i) => '&NewLine;&Tab;- ' + x) + '&NewLine;' +
-          '---&NewLine;' +
-          body">
-      <input type="submit">
+        [value]="form-value()">
+      <input type="submit">      
     </form>
+    <pre [text]="form-value()"></pre>
   </body>
 </html>
