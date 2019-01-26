@@ -27,7 +27,7 @@ tags:
   <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
  </head>
  <body>
-  ---
+  ---<br>
   <label>title:</label><input type="text" on="change:AMP.setState({title: event.value})"><aside>the name of your project</aside><br>
   <label>categories:</label><aside>choose up to two categories for your project</aside><br>
   <amp-selector layout="container" on="select:AMP.setState({categories: event.selectedOptions})" multiple>
@@ -45,7 +45,7 @@ tags:
       {%- for tag in page.tags -%}<li option="{{ tag.label }}">{{ tag.label }}</li><aside>{{ tag.value }}</aside>{%- endfor -%}
     </ul>
   </amp-selector>
-  ---
+  ---<br>
   <textarea on="change:AMP.setState({body: event.value})"></textarea>
   <form method="get"
     target="_blank"
