@@ -8,6 +8,7 @@ categories:
 
 
 {% for project in site.projects | where_exp:"item","item.categories contains category" %}
+{{ project | inspect }}
 ### [{{ post.title }}](https://{% if post.source.type == 'gist' %}gist.{% endif %}github.com/{{ post.source.owner }}/{{ post.source.repo}})
 
 
