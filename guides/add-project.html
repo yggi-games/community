@@ -50,7 +50,7 @@ tags:
       action="https://github.com/yggi-games/community/new/master/_posts">
       <input type="hidden" 
         name="filename" 
-        [value]="encodeURI(title || '') + '.md'">
+        [value]="'{{ site.time }}' + encodeURI(title || '') + '.md'">
       <input type="hidden" 
         name="value"
         [value]="
