@@ -31,7 +31,7 @@ tags:
       '&Tab;' + 'repo: ' + repo + '&NewLine;' +
       'tags: ' + tags.map((x,i) => '&NewLine;&Tab;- ' + x) + '&NewLine;' +
       '---&NewLine;' +
-      body" />
+      body"></amp-bind-macro>
     <pre>
     ---
     title: <input type="text" on="change:AMP.setState({title: event.value})">
