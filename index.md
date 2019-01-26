@@ -1,11 +1,14 @@
 ---
+categories:
+  - table top rpg
 ---
-{% for category in site.categories %}
-## {{ category[0] }}
+
+{% for category in page.categories %}
+## {{ category }}
 
 
-{% for post in category[1] %}
-### [{{ post.title }}](https://{% if post.source.type == 'gist' %}gist.{% endif %}github.com/{{ post.source.owner }}/{{ post.source.repo }}) 
+{% for project in site.projects | where_exp:"item","item.categories contains category" %}
+### [{{ post.title }}](https://{% if post.source.type == 'gist' %}gist.{% endif %}github.com/{{ post.source.owner }}/{{ post.source.repo}})
 
 
 {{ post.content }}
