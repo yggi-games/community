@@ -10,13 +10,13 @@ categories:
 
 
 {% for project in projects %}
-### [{{ post.title }}](https://{% if post.source.type == 'gist' %}gist.{% endif %}github.com/{{ post.source.owner }}/{{ post.source.repo}})
+### [{{ project.title }}](https://{% if project.source.type == 'gist' %}gist.{% endif %}github.com/{{ project.source.owner }}/{{ project.source.repo}})
 
 
-{{ post.content }}
+{{ project.content }}
 
 
-{% for tag in post.tags %}
+{% for tag in project.tags %}
 * {{ tag }}
 {% endfor %}
 {% endfor %}
