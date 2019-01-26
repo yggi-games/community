@@ -1,12 +1,18 @@
 ---
 categories:
-  - cat
-  - dog
-  - bird
+  - label: cat
+    value: it meows
+  - label: dog
+    value: it barks
+  - label: duck
+    value: it quacks
 tags: 
-  - spots
-  - stripes
-  - solid
+  - label: spots
+    value: like a dalmation
+  - label: stripes
+    value: like a tiger
+  - label: solid
+    value: like a really boring tiger or dalmation
 ---
 <!doctype html>
 <html ⚡>
@@ -23,22 +29,22 @@ tags:
  <body>
     <pre>
     ---
-    title: <input type="text" on="change:AMP.setState({title: event.value})">
-    categories: <amp-selector layout="container" on="select:AMP.setState({categories: event.selectedOptions})" multiple>
+    <label>title:</label><input type="text" on="change:AMP.setState({title: event.value})"><aside>the name of your project</aside>
+    <label>categories:</label><aside>choose up to two categories for your project</aside><amp-selector layout="container" on="select:AMP.setState({categories: event.selectedOptions})" multiple>
       <ul>
         {%- for category in page.categories -%}
-        <li option="{{ category }}">{{ category }}</li>
+        <li option="{{ category.label }}">{{ category.label }}</li><aside>{{ category.value }}</aside>
         {%- endfor -%}
       </ul>
     </amp-selector>
-    source:
-      type: gist? <input type="checkbox" value="gist" on="change:AMP.setState({gist: event.value})">
-      owner: <input type="text" on="change:AMP.setState({owner: event.value})">
-      repo: <input type="text" on="change:AMP.setState({repo: event.value})">
-    tags: <amp-selector layout="container" on="select:AMP.setState({tags: event.selectedOptions})" multiple>
+    <label>source:</label><aside>where can we find your project?</aside>
+      <label>type:</label><input type="checkbox" value="gist" on="change:AMP.setState({gist: event.value})"><aside>check if your project is a gist</aside>
+      <label>owner:</label><input type="text" on="change:AMP.setState({owner: event.value})"><aside>your github user name</aside>
+      <label>repo:</label><input type="text" on="change:AMP.setState({repo: event.value})"><aside>your project's name</aside>
+    <label>tags:</label><amp-selector layout="container" on="select:AMP.setState({tags: event.selectedOptions})" multiple><aside>choose up to 5 tags for your project</aside>
       <ul>
         {%- for tag in page.tags -%}
-        <li option="{{ tag }}">{{ tag }}</li>
+        <li option="{{ tag.label }}">{{ tag.label }}</li><aside>{{ tag.value }}</aside>
         {%- endfor -%}
       </ul>
     </amp-selector>
