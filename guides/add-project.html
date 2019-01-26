@@ -24,12 +24,12 @@ tags:
     <amp-bind-macro id="form-value" expression="
       '---&NewLine;' +
       'title: ' + title + '&NewLine;' +
-      'categories: ' + categories.map((x,i) => '&NewLine;&Tab;- ' + x).join('') + '&NewLine;' +
+      'categories: ' + categories ? categories.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '' + '&NewLine;' +
       'source:' + '&NewLine;' +
       '&Tab;' + 'type: ' + gist + '&NewLine;' +
       '&Tab;' + 'owner: ' + owner + '&NewLine;' +
       '&Tab;' + 'repo: ' + repo + '&NewLine;' +
-      'tags: ' + tags.map((x,i) => '&NewLine;&Tab;- ' + x).join('') + '&NewLine;' +
+      'tags: ' + tags ? tags.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '' + '&NewLine;' +
       '---&NewLine;' +
       body"></amp-bind-macro>
     <pre>
