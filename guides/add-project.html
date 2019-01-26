@@ -1,0 +1,43 @@
+<!doctype html>
+<html ⚡>
+ <head>
+   <meta charset="utf-8">
+   <link rel="canonical" href="hello-world.html">
+   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+   <script async src="https://cdn.ampproject.org/v0.js"></script>
+   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+ </head>
+ <body>
+    <pre>
+    ---
+    title: <input type="text" on="change:AMP.setSate({title: event.value})">
+    categories: <input type="text" on="change:AMP.setSate({categories: event.value})">
+    source:
+      type: gist? <input type="checkbox" value="gist" on="change:AMP.setSate({gist: event.value})">
+      owner: <input type="text" on="change:AMP.setSate({owner: event.value})">
+      repo: <input type="text" on="change:AMP.setSate({repo: event.value})">
+    tags: <input type="text" on="change:AMP.setSate({tags: event.value})">
+    ---
+    <textarea on="change:AMP.setSate({body: event.value})"></textarea>
+    </pre>
+    <form method="get"
+      action="https://github.com/yggi-games/community/new/master/_posts">
+      <input type="hidden" name="filename" [value]="encodeURIComponent(title)">
+      <input type="hidden" name="value"
+        [value]="
+          '---\n' +
+          'title: ' + title + '\n' +
+          'categories: [' + categories + ']\n' +
+          'source: ' +
+          '\t' + 'type: ' + gist + '\n' +
+          '\t' + 'owner: ' + owner + '\n' +
+          '\t' + 'repo: ' + repo + '\n' +
+          'tags: ' + tags + '\n' +
+          '---\n' +
+          'body'">
+      <input type="submit">
+    </form>
+  </body>
+</html>
