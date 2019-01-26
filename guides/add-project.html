@@ -16,61 +16,55 @@ tags:
 ---
 <!doctype html>
 <html ⚡>
- <head>
-   <meta charset="utf-8">
-   <link rel="canonical" href="hello-world.html">
-   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-   <script async src="https://cdn.ampproject.org/v0.js"></script>
-   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-   <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="hello-world.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
  </head>
  <body>
-    <pre>
-    ---
-    <label>title:</label><input type="text" on="change:AMP.setState({title: event.value})"><aside>the name of your project</aside>
-    <label>categories:</label><aside>choose up to two categories for your project</aside><amp-selector layout="container" on="select:AMP.setState({categories: event.selectedOptions})" multiple>
-      <ul>
-        {%- for category in page.categories -%}
-        <li option="{{ category.label }}">{{ category.label }}</li><aside>{{ category.value }}</aside>
-        {%- endfor -%}
-      </ul>
-    </amp-selector>
-    <label>source:</label><aside>where can we find your project?</aside>
-      <label>type:</label><input type="checkbox" value="gist" on="change:AMP.setState({gist: event.value})"><aside>check if your project is a gist</aside>
-      <label>owner:</label><input type="text" on="change:AMP.setState({owner: event.value})"><aside>your github user name</aside>
-      <label>repo:</label><input type="text" on="change:AMP.setState({repo: event.value})"><aside>your project's name</aside>
-    <label>tags:</label><amp-selector layout="container" on="select:AMP.setState({tags: event.selectedOptions})" multiple><aside>choose up to 5 tags for your project</aside>
-      <ul>
-        {%- for tag in page.tags -%}
-        <li option="{{ tag.label }}">{{ tag.label }}</li><aside>{{ tag.value }}</aside>
-        {%- endfor -%}
-      </ul>
-    </amp-selector>
-    ---
-    <textarea on="change:AMP.setState({body: event.value})"></textarea>
-    </pre>
-    <form method="get"
-      target="_blank"
-      action="https://github.com/yggi-games/community/new/master/_posts">
-      <input type="hidden" 
-        name="filename" 
-        [value]="'{{ site.time }}' + encodeURI(title || '') + '.md'">
-      <input type="hidden" 
-        name="value"
-        [value]="
-      '---&NewLine;' +
-      'title: ' + (title || '') + '&NewLine;' +
-      'categories: ' +  (categories ? categories.map((x,i) => '&NewLine;' + '  ' + '- ' + x).join('') : '') + '&NewLine;' +
-      'source:' + '&NewLine;' +
-      '  ' + 'type: ' + (gist || '') + '&NewLine;' +
-      '  ' + 'owner: ' + (owner || '') + '&NewLine;' +
-      '  ' + 'repo: ' + (repo || '') + '&NewLine;' +
-      'tags: ' +  (tags ? tags.map((x,i) => '&NewLine;' + '  ' + '- ' + x).join('') : '') + '&NewLine;' +
-      '---&NewLine;' +
-      (body || '')">
-      <input type="submit">      
-    </form>
-  </body>
+  ---
+  <label>title:</label><input type="text" on="change:AMP.setState({title: event.value})"><aside>the name of your project</aside>
+  <label>categories:</label><aside>choose up to two categories for your project</aside><amp-selector layout="container" on="select:AMP.setState({categories: event.selectedOptions})" multiple>
+    <ul>
+      {%- for category in page.categories -%}<li option="{{ category.label }}">{{ category.label }}</li><aside>{{ category.value }}</aside>{%- endfor -%}
+    </ul>
+  </amp-selector>
+  <label>source:</label><aside>where can we find your project?</aside>
+    <label>type:</label><input type="checkbox" value="gist" on="change:AMP.setState({gist: event.value})"><aside>check if your project is a gist</aside>
+    <label>owner:</label><input type="text" on="change:AMP.setState({owner: event.value})"><aside>your github user name</aside>
+    <label>repo:</label><input type="text" on="change:AMP.setState({repo: event.value})"><aside>your project's name</aside>
+  <label>tags:</label><amp-selector layout="container" on="select:AMP.setState({tags: event.selectedOptions})" multiple><aside>choose up to 5 tags for your project</aside>
+    <ul>
+      {%- for tag in page.tags -%}<li option="{{ tag.label }}">{{ tag.label }}</li><aside>{{ tag.value }}</aside>{%- endfor -%}
+    </ul>
+  </amp-selector>
+  ---
+  <textarea on="change:AMP.setState({body: event.value})"></textarea>
+  <form method="get"
+    target="_blank"
+    action="https://github.com/yggi-games/community/new/master/_posts">
+    <input type="hidden" 
+      name="filename" 
+      [value]="'{{ site.time }}' + encodeURI(title || '') + '.md'">
+    <input type="hidden" 
+      name="value"
+      [value]="
+    '---&NewLine;' +
+    'title: ' + (title || '') + '&NewLine;' +
+    'categories: ' +  (categories ? categories.map((x,i) => '&NewLine;' + '  ' + '- ' + x).join('') : '') + '&NewLine;' +
+    'source:' + '&NewLine;' +
+    '  ' + 'type: ' + (gist || '') + '&NewLine;' +
+    '  ' + 'owner: ' + (owner || '') + '&NewLine;' +
+    '  ' + 'repo: ' + (repo || '') + '&NewLine;' +
+    'tags: ' +  (tags ? tags.map((x,i) => '&NewLine;' + '  ' + '- ' + x).join('') : '') + '&NewLine;' +
+    '---&NewLine;' +
+    (body || '')">
+    <input type="submit">      
+  </form>
+</body>
 </html>
