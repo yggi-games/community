@@ -5,8 +5,10 @@ tags:
   - one-shot
   - gm-less
 ---
+{% assign categories = page.categories %}
+{% assign tags = page.tags %}
 
-{% for category in page.categories %}
+{% for category in categories %}
 {% assign projects = site.projects | where_exp:"item","item.categories contains category" %}
 {% if projects %}
 ## {{ category }}
