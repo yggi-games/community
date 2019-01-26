@@ -1,3 +1,13 @@
+---
+categories:
+  - cat
+  - dog
+  - bird
+tags: 
+  - spots
+  - stripes
+  - solid
+---
 <!doctype html>
 <html ⚡>
  <head>
@@ -13,7 +23,7 @@
     <amp-bind-macro id="form-value" expression="
       '---&NewLine;' +
       'title: ' + title + '&NewLine;' +
-      'categories: ' + categories.map((x,i) => '&NewLine;&Tab;- ' + x) + '&NewLine;' +
+      'categories: ' + categories.map((x,i) => '&NewLine;&Tab;- ' + x).join + '&NewLine;' +
       'source:' + '&NewLine;' +
       '&Tab;' + 'type: ' + gist + '&NewLine;' +
       '&Tab;' + 'owner: ' + owner + '&NewLine;' +
@@ -24,12 +34,24 @@
     <pre>
     ---
     title: <input type="text" on="change:AMP.setState({title: event.value})">
-    categories: <input type="text" on="change:AMP.setState({categories: event.value})">
+    categories: <amp-selector layout="container" on="change:AMP.setSate({categories: event.value})" multiple>
+      <ul>
+        {%- for category in page.categories -%}
+        <li option="{{ category }}">{{ category }}<li>
+        {%- endfor -%}
+      </ul>
+    </amp-selector>
     source:
       type: gist? <input type="checkbox" value="gist" on="change:AMP.setState({gist: event.value})">
       owner: <input type="text" on="change:AMP.setState({owner: event.value})">
       repo: <input type="text" on="change:AMP.setState({repo: event.value})">
-    tags: <input type="text" on="change:AMP.setState({tags: event.value})">
+    tags: <amp-selector layout="container" on="change:AMP.setSate({tags: event.value})" multiple>
+      <ul>
+        {%- for tag in page.tags -%}
+        <li option="{{ tag }}">{{ tag }}<li>
+        {%- endfor -%}
+      </ul>
+    </amp-selector>
     ---
     <textarea on="change:AMP.setState({body: event.value})"></textarea>
     </pre>
