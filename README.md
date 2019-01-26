@@ -3,7 +3,7 @@
 ## How do I...
 * request a new feature?
   * check if there is a similar feature request by looking at [issues](../../issues)
-  * create a new [issue](../../issues/new)
+  * create a new [issue](../../issues/new?assignees=&labels=enhancement&template=feature_request.md&title=)
 * ask a question?
   * check if there is a similar question by looking at [issues](../../issues)
   * create a new [issue](../../issues/new)
