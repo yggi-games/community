@@ -22,16 +22,17 @@ tags:
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-custom>
     body {
-      font-family: mono-space;
+      font-family: monospace;
     }
     
     label {
-      color: green;
+      color: darkgreen;
     }
     
     aside {
       display: inline;
-      color: amber; 
+      opacity: .5;
+      color: darkgoldenrod; 
       font-style: italic;
     }
     
@@ -44,6 +45,10 @@ tags:
       list-style: none;
       margin: 0;
       padding: 0;
+    }
+    
+    li {
+      display: inline;
     }
     
     li:not([selected]) {
@@ -67,7 +72,7 @@ tags:
   <label>categories:</label><aside>choose up to two categories for your project</aside><br>
   <amp-selector layout="container" on="select:AMP.setState({categories: event.selectedOptions})" multiple>
     <ul>
-      {%- for category in page.categories -%}<li option="{{ category.label }}">{{ category.label }}</li><aside>{{ category.value }}</aside>{%- endfor -%}
+      {%- for category in page.categories -%}<li option="{{ category.label }}">{{ category.label }}</li><aside>{{ category.value }}</aside><br>{%- endfor -%}
     </ul>
   </amp-selector>
   <label>source:</label><aside>where can we find your project?</aside><br>
@@ -77,7 +82,7 @@ tags:
   <label>tags:</label><br>
   <amp-selector layout="container" on="select:AMP.setState({tags: event.selectedOptions})" multiple><aside>choose up to 5 tags for your project</aside>
     <ul>
-      {%- for tag in page.tags -%}<li option="{{ tag.label }}">{{ tag.label }}</li><aside>{{ tag.value }}</aside>{%- endfor -%}
+      {%- for tag in page.tags -%}<li option="{{ tag.label }}">{{ tag.label }}</li><aside>{{ tag.value }}</aside><br>{%- endfor -%}
     </ul>
   </amp-selector>
   ---<br>
