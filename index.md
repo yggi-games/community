@@ -1,6 +1,9 @@
 ---
 categories:
   - table top rpg
+tags:
+  - one-shot
+  - gm-less
 ---
 
 {% for category in page.categories %}
@@ -17,7 +20,9 @@ categories:
 
 
 {% for tag in project.tags %}
+{% if tags contains tag %}
 * {{ tag }}
+{% endif %}
 {% endfor %}
 {% endfor %}
 {% endif %}
