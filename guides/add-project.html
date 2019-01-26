@@ -55,15 +55,15 @@ tags:
         name="value"
         [value]="
       '---&NewLine;' +
-      'title: ' + encodeURI(title || '') + '&NewLine;' +
-      'categories: ' +  encodeURI(categories ? categories.map((x,i) => '&NewLine;' + '  ' + '- ' + x).join('') : '') + '&NewLine;' +
+      'title: ' + (title || '') + '&NewLine;' +
+      'categories: ' +  (categories ? categories.map((x,i) => '&NewLine;' + '  ' + '- ' + x).join('') : '') + '&NewLine;' +
       'source:' + '&NewLine;' +
-      '  ' + 'type: ' + encodeURI(gist || '') + '&NewLine;' +
-      '  ' + 'owner: ' + encodeURI(owner || '') + '&NewLine;' +
-      '  ' + 'repo: ' + encodeURI(repo || '') + '&NewLine;' +
-      'tags: ' +  encodeURI(tags ? tags.map((x,i) => '&NewLine;' + '  ' + '- ' + x).join('') : '') + '&NewLine;' +
+      '  ' + 'type: ' + (gist || '') + '&NewLine;' +
+      '  ' + 'owner: ' + (owner || '') + '&NewLine;' +
+      '  ' + 'repo: ' + (repo || '') + '&NewLine;' +
+      'tags: ' +  (tags ? tags.map((x,i) => '&NewLine;' + '  ' + '- ' + x).join('') : '') + '&NewLine;' +
       '---&NewLine;' +
-      encodeURI(body || '')">
+      (body || '')">
       <input type="submit">      
     </form>
   </body>
