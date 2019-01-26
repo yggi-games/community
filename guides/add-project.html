@@ -21,17 +21,7 @@ tags:
    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
  </head>
  <body>
-    <amp-bind-macro id="form-value" expression="
-      '---&NewLine;' +
-      'title: ' + title + '&NewLine;' +
-      'categories: ' + categories + '&NewLine;' +
-      'source:' + '&NewLine;' +
-      '&Tab;' + 'type: ' + gist + '&NewLine;' +
-      '&Tab;' + 'owner: ' + owner + '&NewLine;' +
-      '&Tab;' + 'repo: ' + repo + '&NewLine;' +
-      'tags: ' + tags + '&NewLine;' +
-      '---&NewLine;' +
-      body"></amp-bind-macro>
+    <amp-bind-macro id="form-value" expression=></amp-bind-macro>
     <pre>
     ---
     title: <input type="text" on="change:AMP.setState({title: event.value})">
@@ -64,9 +54,29 @@ tags:
         [value]="title + '.md'">
       <input type="hidden" 
         name="value"
-        [value]="form-value">
+        [value]="
+      '---&NewLine;' +
+      'title: ' + title + '&NewLine;' +
+      'categories: ' +  categories.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '' + '&NewLine;' +
+      'source:' + '&NewLine;' +
+      '&Tab;' + 'type: ' + gist + '&NewLine;' +
+      '&Tab;' + 'owner: ' + owner + '&NewLine;' +
+      '&Tab;' + 'repo: ' + repo + '&NewLine;' +
+      'tags: ' +  tags.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '' + '&NewLine;' +
+      '---&NewLine;' +
+      body">
       <input type="submit">      
     </form>
-    <pre [text]="form-value"></pre>
+    <pre [text]="
+      '---&NewLine;' +
+      'title: ' + title + '&NewLine;' +
+      'categories: ' +  categories.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '' + '&NewLine;' +
+      'source:' + '&NewLine;' +
+      '&Tab;' + 'type: ' + gist + '&NewLine;' +
+      '&Tab;' + 'owner: ' + owner + '&NewLine;' +
+      '&Tab;' + 'repo: ' + repo + '&NewLine;' +
+      'tags: ' +  tags.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '' + '&NewLine;' +
+      '---&NewLine;' +
+      body"></pre>
   </body>
 </html>
