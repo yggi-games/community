@@ -21,7 +21,7 @@ tags:
    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
  </head>
  <body>
-    <amp-bind-macro id="form-value" expression=></amp-bind-macro>
+    <amp-bind-macro id="optional" expression="optional !== null ? optional : ''" arguments="optional"></amp-bind-macro>
     <pre>
     ---
     title: <input type="text" on="change:AMP.setState({title: event.value})">
@@ -56,27 +56,16 @@ tags:
         name="value"
         [value]="
       '---&NewLine;' +
-      'title: ' + title + '&NewLine;' +
-      'categories: ' +  categories ? categories.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '' + '&NewLine;' +
+      'title: ' + optional(title) + '&NewLine;' +
+      'categories: ' +  optional(categories ? categories.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : null) + '&NewLine;' +
       'source:' + '&NewLine;' +
-      '&Tab;' + 'type: ' + gist + '&NewLine;' +
-      '&Tab;' + 'owner: ' + owner + '&NewLine;' +
-      '&Tab;' + 'repo: ' + repo + '&NewLine;' +
-      'tags: ' +  tags ? tags.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '' + '&NewLine;' +
+      '&Tab;' + 'type: ' + optional(gist) + '&NewLine;' +
+      '&Tab;' + 'owner: ' + optional(owner) + '&NewLine;' +
+      '&Tab;' + 'repo: ' + optional(repo) + '&NewLine;' +
+      'tags: ' +  optional(tags ? tags.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : null) + '&NewLine;' +
       '---&NewLine;' +
       body">
       <input type="submit">      
     </form>
-    <pre [text]="
-      '---&NewLine;' +
-      'title: ' + title + '&NewLine;' +
-      'categories: ' + (categories ? categories.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '') + '&NewLine;' +
-      'source:' + '&NewLine;' +
-      '&Tab;' + 'type: ' + gist + '&NewLine;' +
-      '&Tab;' + 'owner: ' + owner + '&NewLine;' +
-      '&Tab;' + 'repo: ' + repo + '&NewLine;' +
-      'tags: ' + (tags ? tags.map((x,i) => '&NewLine;&Tab;- ' + x).join('') : '') + '&NewLine;' +
-      '---&NewLine;' +
-      body"></pre>
   </body>
 </html>
