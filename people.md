@@ -7,6 +7,7 @@ social:
 {% assign people = site.people %}
 
 {% for person in people %}
-  {{ assign s = social[github] }}
+  {{ assign s = social.github }}
   [{{ s.label }}]({{ s.url | replace_first:"%user%", person.user }})
+  {{ person.content }}
 {% endfor %}
