@@ -20,7 +20,7 @@
       '&Tab;' + 'repo: ' + repo + '&NewLine;' +
       'tags: ' + tags.map((x,i) => '&NewLine;&Tab;- ' + x) + '&NewLine;' +
       '---&NewLine;' +
-      body"/>
+      body" />
     <pre>
     ---
     title: <input type="text" on="change:AMP.setState({title: event.value})">
@@ -37,9 +37,9 @@
       action="https://github.com/yggi-games/community/new/master/_posts">
       <input type="hidden" name="filename" [value]="title + '.md'">
       <input type="hidden" name="value"
-        [value]="form-value()">
+        [value]="form-value">
       <input type="submit">      
     </form>
-    <pre [text]="form-value()"></pre>
+    <pre [text]="form-value"></pre>
   </body>
 </html>
