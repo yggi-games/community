@@ -3,8 +3,7 @@ See [Issue #3](https://github.com/yggi-games/community-alpha/issues/3)
 
 ## Getting Started
 
-*Add you project* –
-
+{{ site.github.url }}
 
 ## Contributing
 
